@@ -1,0 +1,27 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>{{ poll.title }}</h2>
+  <p>{{ poll.description }}</p>
+
+  {% for question in poll.questions.all %}
+    <h3>{{ question.text }}</h3>
+    <ul>
+      {% for choice in question.choices.all %}
+        <li>
+          <a href="{% url 'polls:vote' poll.id choice.id %}">
+            {{ choice.text }}
+          </a> ({{ choice.votes }} votes)
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endblock %}
+
+<script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
+<script>
+  var chart = new ej.charts.Chart({
+    // Chart configuration goes here
+  });
+  chart.appendTo('#element');
+</script>
