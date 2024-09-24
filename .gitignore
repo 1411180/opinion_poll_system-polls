@@ -1,0 +1,20 @@
+# Ignore Python bytecode
+*.pyc
+__pycache__/
+
+# Ignore database files
+db.postgresql
+
+# Ignore environment variables
+.env
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore package files (if not needed)
+# package.json
+# package-lock.json
+
+# Ignore temporary files
+*.log
+.DS_Store
